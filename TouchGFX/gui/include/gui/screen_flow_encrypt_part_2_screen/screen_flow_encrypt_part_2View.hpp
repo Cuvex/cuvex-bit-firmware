@@ -1,0 +1,88 @@
+/*
+ *****************************************************************************
+ * @attention
+ *
+ * Portion Copyright (C) 2024 Semilla3 OÜ.  All Rights Reserved.
+ *
+ * This software is licensed under terms that can be found in the LICENSE file
+ * in the root directory of this software component.
+ * If no LICENSE file comes with this software, it is provided AS-IS.
+ *
+ ******************************************************************************
+ */
+
+#ifndef SCREEN_FLOW_ENCRYPT_PART_2VIEW_HPP
+#define SCREEN_FLOW_ENCRYPT_PART_2VIEW_HPP
+
+#include <gui_generated/screen_flow_encrypt_part_2_screen/screen_flow_encrypt_part_2ViewBase.hpp>
+#include <gui/screen_flow_encrypt_part_2_screen/screen_flow_encrypt_part_2Presenter.hpp>
+#include <texts/TextKeysAndLanguages.hpp>
+
+class screen_flow_encrypt_part_2View : public screen_flow_encrypt_part_2ViewBase
+{
+public:
+	screen_flow_encrypt_part_2View();
+	virtual ~screen_flow_encrypt_part_2View() {}
+	virtual void setupScreen();
+	virtual void tearDownScreen();
+
+	virtual void tickEventScreen();
+	virtual void changeScreen(uint8_t screen);
+	virtual void changeVolume(uint8_t state);
+    virtual void updateFingerprint(uint16_t state);
+	virtual void getTemplate(uint8_t state);
+	virtual void hideKeyboardPasswordPressed();
+	virtual void show1KeyboardPasswordPressed();
+	virtual void show2KeyboardPasswordPressed();
+	virtual void enterKeyboardPasswordPressed();
+	virtual void hideKeyboardAliasPressed();
+	virtual void showKeyboardAliasPressed();
+	virtual void enterKeyboardAliasPressed();
+	virtual void eye1Pressed();
+	virtual void eye2Pressed();
+	virtual void passwordSuccessPressed();
+	virtual void biometricsSuccessPressed();
+	virtual void biometricYesPressed();
+	virtual void biometricNoPressed();
+	virtual void biometricContinuePressed();
+	virtual void biometricBackPressed();
+	virtual void multisignedYesPressed();
+	virtual void multisignedNoPressed();
+	virtual void multisignedPlusPressed();
+	virtual void multisignedMinusPressed();
+	virtual void multisignedSelectPressed();
+	virtual void success1Pressed();
+	virtual void success2Pressed();
+
+protected:
+	uint8_t actual_pwd;
+	uint8_t	total_pwds;
+	uint8_t	mandatory_pwds;
+	uint8_t biometric_enable;
+
+	uint8_t pwd_raw[10*KEYBOARD1_TEXT_TYPED_PASSWORD_SIZE];
+	uint8_t pwd_sha256[32];
+	uint8_t pwd_combined_sha256[32];
+	uint8_t iv_aes_gcm[16];
+
+	uint8_t pwds[10][KEYBOARD1_TEXT_TYPED_PASSWORD_SIZE];		//New
+	uint8_t pwds_sha256[10][32];								//New
+	uint8_t pwds_sha256_concat[320];							//New
+	uint8_t pwds_key_pbkdf2[32];								//New
+	uint8_t salt_pbkdf2[16];									//New
+
+	void setScreenMode();
+	void setScreenLanguage();
+	void generateRecordData1_Alias();
+	void generateRecordData2_Cryptogram();
+	void generateRecordData3_Information();
+	void generateRecordData4_Multisignature();
+	void configAESPeripheral(uint8_t keyAES[], uint8_t ivAES[]);
+	void generateCryptogram(uint8_t *text_to_encrypt);
+	void generateCombinations(int start, int index, char result[][KEYBOARD1_TEXT_TYPED_PASSWORD_SIZE]);
+	void sortPasswordsLexicographically(uint8_t pwds[10][32], uint8_t num_pwd);
+	uint8_t getRNG16Bytes(uint8_t *buffer);
+	uint8_t pbkdf2_sha256(const uint8_t *password, size_t pass_len, const uint8_t *salt, size_t salt_len, uint32_t iterations, uint8_t *derived_key, size_t dk_len);
+};
+
+#endif // SCREEN_FLOW_ENCRYPT_PART_2VIEW_HPP

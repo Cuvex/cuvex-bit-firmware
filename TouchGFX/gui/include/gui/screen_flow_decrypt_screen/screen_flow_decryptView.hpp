@@ -1,0 +1,86 @@
+/*
+ *****************************************************************************
+ * @attention
+ *
+ * Portion Copyright (C) 2024 Semilla3 OÜ.  All Rights Reserved.
+ *
+ * This software is licensed under terms that can be found in the LICENSE file
+ * in the root directory of this software component.
+ * If no LICENSE file comes with this software, it is provided AS-IS.
+ *
+ ******************************************************************************
+ */
+
+#ifndef SCREEN_FLOW_DECRYPTVIEW_HPP
+#define SCREEN_FLOW_DECRYPTVIEW_HPP
+
+#include <gui_generated/screen_flow_decrypt_screen/screen_flow_decryptViewBase.hpp>
+#include <gui/screen_flow_decrypt_screen/screen_flow_decryptPresenter.hpp>
+#include <texts/TextKeysAndLanguages.hpp>
+#include <touchgfx/Callback.hpp>
+#include "Bitcoin.h"
+
+class screen_flow_decryptView : public screen_flow_decryptViewBase
+{
+public:
+    screen_flow_decryptView();
+    virtual ~screen_flow_decryptView() {}
+    virtual void setupScreen();
+    virtual void tearDownScreen();
+
+    virtual void tickEventScreen();
+    virtual void changeScreen(uint16_t screen);
+    virtual void changeVolume(uint16_t state);
+    virtual void updateVolume(uint16_t state);
+    virtual void checkTemplate(uint16_t state);
+    virtual void updateFingerprint(uint16_t state);
+    virtual void decryptPressed();
+    virtual void moreTimePressed();
+    virtual void resetMicrocontrollerPressed();
+    virtual void btnUpPressed();
+    virtual void btnDownPressed();
+    virtual void qrSmallPressed();
+    virtual void backPressed();
+    virtual void btnCautionMsgPressed();
+    virtual void btnQrSeedPressed();
+    virtual void btnQrPrivateKeyPressed();
+    virtual void btnQrPublicKeyPressed();
+    virtual void btnVerifyAddressPressed();
+    virtual void btnClosePressed();
+    virtual void btnConnectAppMsgPressed();
+
+    void handlePasswordResult(uint8_t result);
+    void handleBiometricResult(uint8_t result);
+    void handleVerifyAddressResult(bool result);
+
+protected:
+	touchgfx::Callback<screen_flow_decryptView, uint8_t> passwordResultCallback;
+	touchgfx::Callback<screen_flow_decryptView, uint8_t> biometricResultCallback;
+	touchgfx::Callback<screen_flow_decryptView, bool> verifyAddressCallback;
+
+    uint8_t  qr_info_type;
+    uint8_t  text_type;
+    uint16_t total_words;
+    uint16_t index_words;
+	uint8_t	 num_pwds;
+	uint8_t  actual_pwd;
+	bool 	 pwd_ok;
+    uint8_t  words_decrypted[55][5];				//48 words... 4 characters per word...
+    uint8_t  words_to_check[55][15];				//48 words... 8 characters per word...
+	uint8_t  buff_passphrase[105];					//100 characters
+	uint8_t  buff_plain_text[505];					//500 characters
+	uint8_t  buff_pass_der[205];					//200 characters
+	uint8_t  buff_derivation1[105];					//100 characters
+	uint8_t  buff_derivation2[105];					//100 characters
+	uint8_t  buff_pri_key[205];						//200 characters
+	uint8_t  buff_pub_key[205];						//200 characters
+	uint8_t  pwd_sha256[32];						//32
+	uint8_t  pwd_combined_sha256[32];				//32
+	uint8_t  header_aes_gcm[4];						//4
+	uint8_t  iv_aes_gcm[16];						//16
+    virtual void setScreenMode();
+    virtual void setScreenLanguage();
+	void passwordSuccess(uint8_t  decrypted_text[SIZE_CRYPT]);
+};
+
+#endif // SCREEN_FLOW_DECRYPTVIEW_HPP

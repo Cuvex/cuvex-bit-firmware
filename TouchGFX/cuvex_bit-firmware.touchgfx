@@ -5104,7 +5104,120 @@
           },
           {
             "Type": "Container",
-            "Name": "s4_viewSecret",
+            "Name": "s4_confirmViewSecret",
+            "Width": 320,
+            "Height": 240,
+            "Visible": false,
+            "LockPosition": true,
+            "Components": [
+              {
+                "Type": "FlexButton",
+                "Name": "btn_confirm_view_secret",
+                "Y": 210,
+                "Width": 320,
+                "Height": 30,
+                "LockPosition": true,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "TextButtonStyle",
+                    "Y": 5,
+                    "TextId": "__SingleUse_RWRG",
+                    "TextRotation": "0",
+                    "ColorReleased": {
+                      "Red": 237,
+                      "Green": 237,
+                      "Blue": 237
+                    },
+                    "ColorPressed": {
+                      "Red": 237,
+                      "Green": 237,
+                      "Blue": 237
+                    }
+                  },
+                  {
+                    "Type": "BoxWithBorderButtonStyle",
+                    "Width": 320,
+                    "Height": 30,
+                    "LockToFlexButtonSize": true,
+                    "ColorReleased": {
+                      "Red": 63,
+                      "Green": 63,
+                      "Blue": 81
+                    },
+                    "ColorPressed": {
+                      "Red": 64,
+                      "Green": 92,
+                      "Blue": 160
+                    },
+                    "ColorBorderReleased": {
+                      "Red": 237,
+                      "Green": 237,
+                      "Blue": 237
+                    },
+                    "ColorBorderPressed": {
+                      "Red": 51,
+                      "Green": 102,
+                      "Blue": 153
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "TextArea",
+                "Name": "text_confirm_view_secret_1",
+                "X": 9,
+                "Y": 20,
+                "Width": 104,
+                "Height": 20,
+                "LockPosition": true,
+                "TextId": "__SingleUse_FOSU",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 63,
+                  "Green": 63,
+                  "Blue": 81
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "text_confirm_view_secret_2",
+                "X": 9,
+                "Y": 40,
+                "Width": 302,
+                "Height": 120,
+                "LockPosition": true,
+                "TextId": "__SingleUse_OWTF",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 63,
+                  "Green": 63,
+                  "Blue": 81
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "text_confirm_view_secret_3",
+                "X": 9,
+                "Y": 160,
+                "Width": 302,
+                "Height": 40,
+                "LockPosition": true,
+                "TextId": "__SingleUse_6KK4",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 63,
+                  "Green": 63,
+                  "Blue": 81
+                }
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "s5_viewSecret",
             "Width": 320,
             "Height": 240,
             "Visible": false,
@@ -5453,8 +5566,53 @@
                 "Components": [
                   {
                     "Type": "FlexButton",
-                    "Name": "btn_1_qr_seed",
-                    "Y": 60,
+                    "Name": "btn_1_watch_only_wallet",
+                    "Y": 45,
+                    "Width": 320,
+                    "Height": 30,
+                    "LockPosition": true,
+                    "ButtonTrigger": {
+                      "Type": "ClickButtonTrigger"
+                    },
+                    "ButtonStyles": [
+                      {
+                        "Type": "TextButtonStyle",
+                        "Y": 5,
+                        "TextId": "sd_text_watch_only_wallet",
+                        "TextRotation": "0",
+                        "ColorReleased": {
+                          "Red": 63,
+                          "Green": 63,
+                          "Blue": 81
+                        },
+                        "ColorPressed": {
+                          "Red": 237,
+                          "Green": 237,
+                          "Blue": 237
+                        }
+                      },
+                      {
+                        "Type": "BoxWithBorderButtonStyle",
+                        "Width": 320,
+                        "Height": 30,
+                        "LockToFlexButtonSize": true,
+                        "ColorReleased": {
+                          "Red": 237,
+                          "Green": 237,
+                          "Blue": 237
+                        },
+                        "ColorPressed": {
+                          "Red": 63,
+                          "Green": 63,
+                          "Blue": 81
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "FlexButton",
+                    "Name": "btn_2_qr_seed",
+                    "Y": 75,
                     "Width": 320,
                     "Height": 30,
                     "LockPosition": true,
@@ -5498,8 +5656,8 @@
                   },
                   {
                     "Type": "FlexButton",
-                    "Name": "btn_2_qr_private_key",
-                    "Y": 90,
+                    "Name": "btn_3_qr_private_key",
+                    "Y": 105,
                     "Width": 320,
                     "Height": 30,
                     "LockPosition": true,
@@ -5543,8 +5701,8 @@
                   },
                   {
                     "Type": "FlexButton",
-                    "Name": "btn_3_qr_public_key",
-                    "Y": 120,
+                    "Name": "btn_4_qr_public_key",
+                    "Y": 135,
                     "Width": 320,
                     "Height": 30,
                     "LockPosition": true,
@@ -5588,8 +5746,8 @@
                   },
                   {
                     "Type": "FlexButton",
-                    "Name": "btn_4_verify_address",
-                    "Y": 150,
+                    "Name": "btn_5_reuse_seed_phrase",
+                    "Y": 165,
                     "Width": 320,
                     "Height": 30,
                     "LockPosition": true,
@@ -5600,7 +5758,7 @@
                       {
                         "Type": "TextButtonStyle",
                         "Y": 5,
-                        "TextId": "sd_text_verify_address",
+                        "TextId": "sd_text_reuse_seed_phrase",
                         "TextRotation": "0",
                         "ColorReleased": {
                           "Red": 63,
@@ -5786,149 +5944,955 @@
             ]
           },
           {
-            "Type": "CustomContainerInstance",
-            "Name": "s5_verify_address",
-            "Width": 320,
-            "Height": 240,
-            "Visible": false,
-            "LockPosition": true,
-            "CustomContainerDefinitionName": "verify_address"
-          },
-          {
             "Type": "Container",
-            "Name": "s6_check_address",
+            "Name": "s6_watch_only_wallet",
             "Width": 320,
             "Height": 240,
             "Visible": false,
             "LockPosition": true,
             "Components": [
               {
-                "Type": "FlexButton",
-                "Name": "btn_close",
-                "Y": 210,
+                "Type": "Container",
+                "Name": "wow_menu",
                 "Width": 320,
-                "Height": 30,
+                "Height": 240,
                 "LockPosition": true,
-                "ButtonTrigger": {
-                  "Type": "ClickButtonTrigger"
-                },
-                "ButtonStyles": [
+                "Components": [
                   {
-                    "Type": "TextButtonStyle",
-                    "Y": 5,
-                    "TextId": "sd_close_btn",
-                    "TextRotation": "0",
-                    "ColorReleased": {
-                      "Red": 237,
-                      "Green": 237,
-                      "Blue": 237
+                    "Type": "FlexButton",
+                    "Name": "btn_1_create_descriptor",
+                    "Y": 60,
+                    "Width": 320,
+                    "Height": 30,
+                    "LockPosition": true,
+                    "ButtonTrigger": {
+                      "Type": "ClickButtonTrigger"
                     },
-                    "ColorPressed": {
+                    "ButtonStyles": [
+                      {
+                        "Type": "TextButtonStyle",
+                        "Y": 5,
+                        "TextId": "sd_text_create_descriptor",
+                        "TextRotation": "0",
+                        "ColorReleased": {
+                          "Red": 63,
+                          "Green": 63,
+                          "Blue": 81
+                        },
+                        "ColorPressed": {
+                          "Red": 237,
+                          "Green": 237,
+                          "Blue": 237
+                        }
+                      },
+                      {
+                        "Type": "BoxWithBorderButtonStyle",
+                        "Width": 320,
+                        "Height": 30,
+                        "LockToFlexButtonSize": true,
+                        "ColorReleased": {
+                          "Red": 237,
+                          "Green": 237,
+                          "Blue": 237
+                        },
+                        "ColorPressed": {
+                          "Red": 63,
+                          "Green": 63,
+                          "Blue": 81
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "FlexButton",
+                    "Name": "btn_2_create_descriptor_multisign",
+                    "Y": 90,
+                    "Width": 320,
+                    "Height": 30,
+                    "LockPosition": true,
+                    "ButtonTrigger": {
+                      "Type": "ClickButtonTrigger"
+                    },
+                    "ButtonStyles": [
+                      {
+                        "Type": "TextButtonStyle",
+                        "Y": 5,
+                        "TextId": "sd_text_create_descriptor_multisign",
+                        "TextRotation": "0",
+                        "ColorReleased": {
+                          "Red": 63,
+                          "Green": 63,
+                          "Blue": 81
+                        },
+                        "ColorPressed": {
+                          "Red": 237,
+                          "Green": 237,
+                          "Blue": 237
+                        }
+                      },
+                      {
+                        "Type": "BoxWithBorderButtonStyle",
+                        "Width": 320,
+                        "Height": 30,
+                        "LockToFlexButtonSize": true,
+                        "ColorReleased": {
+                          "Red": 237,
+                          "Green": 237,
+                          "Blue": 237
+                        },
+                        "ColorPressed": {
+                          "Red": 63,
+                          "Green": 63,
+                          "Blue": 81
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "FlexButton",
+                    "Name": "btn_3_verify_address",
+                    "Y": 120,
+                    "Width": 320,
+                    "Height": 30,
+                    "LockPosition": true,
+                    "ButtonTrigger": {
+                      "Type": "ClickButtonTrigger"
+                    },
+                    "ButtonStyles": [
+                      {
+                        "Type": "TextButtonStyle",
+                        "Y": 5,
+                        "TextId": "sd_text_verify_address",
+                        "TextRotation": "0",
+                        "ColorReleased": {
+                          "Red": 63,
+                          "Green": 63,
+                          "Blue": 81
+                        },
+                        "ColorPressed": {
+                          "Red": 237,
+                          "Green": 237,
+                          "Blue": 237
+                        }
+                      },
+                      {
+                        "Type": "BoxWithBorderButtonStyle",
+                        "Width": 320,
+                        "Height": 30,
+                        "LockToFlexButtonSize": true,
+                        "ColorReleased": {
+                          "Red": 237,
+                          "Green": 237,
+                          "Blue": 237
+                        },
+                        "ColorPressed": {
+                          "Red": 63,
+                          "Green": 63,
+                          "Blue": 81
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "FlexButton",
+                    "Name": "btn_4_create_chat_key",
+                    "Y": 150,
+                    "Width": 320,
+                    "Height": 30,
+                    "LockPosition": true,
+                    "ButtonTrigger": {
+                      "Type": "ClickButtonTrigger"
+                    },
+                    "ButtonStyles": [
+                      {
+                        "Type": "TextButtonStyle",
+                        "Y": 5,
+                        "TextId": "sd_text_create_chat_key",
+                        "TextRotation": "0",
+                        "ColorReleased": {
+                          "Red": 63,
+                          "Green": 63,
+                          "Blue": 81
+                        },
+                        "ColorPressed": {
+                          "Red": 237,
+                          "Green": 237,
+                          "Blue": 237
+                        }
+                      },
+                      {
+                        "Type": "BoxWithBorderButtonStyle",
+                        "Width": 320,
+                        "Height": 30,
+                        "LockToFlexButtonSize": true,
+                        "ColorReleased": {
+                          "Red": 237,
+                          "Green": 237,
+                          "Blue": 237
+                        },
+                        "ColorPressed": {
+                          "Red": 63,
+                          "Green": 63,
+                          "Blue": 81
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "wow_create_descriptor",
+                "Width": 320,
+                "Height": 240,
+                "Visible": false,
+                "LockPosition": true,
+                "Components": [
+                  {
+                    "Type": "CustomContainerInstance",
+                    "Name": "container_create_descriptor",
+                    "Width": 320,
+                    "Height": 240,
+                    "LockPosition": true,
+                    "CustomContainerDefinitionName": "create_descriptor"
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "wow_verify_address",
+                "Width": 320,
+                "Height": 240,
+                "Visible": false,
+                "LockPosition": true,
+                "Components": [
+                  {
+                    "Type": "CustomContainerInstance",
+                    "Name": "container_verify_address",
+                    "Width": 320,
+                    "Height": 240,
+                    "LockPosition": true,
+                    "CustomContainerDefinitionName": "verify_address"
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_check_verify_address",
+                    "Width": 320,
+                    "Height": 240,
+                    "Visible": false,
+                    "LockPosition": true,
+                    "Components": [
+                      {
+                        "Type": "Container",
+                        "Name": "check_not_hardenend_address",
+                        "Width": 320,
+                        "Height": 240,
+                        "LockPosition": true,
+                        "Components": [
+                          {
+                            "Type": "FlexButton",
+                            "Name": "btn_toggle_hardened",
+                            "Y": 210,
+                            "Width": 320,
+                            "Height": 30,
+                            "LockPosition": true,
+                            "ButtonTrigger": {
+                              "Type": "ClickButtonTrigger"
+                            },
+                            "ButtonStyles": [
+                              {
+                                "Type": "TextButtonStyle",
+                                "Y": 5,
+                                "TextId": "sd_btn_toggle_hardened",
+                                "TextRotation": "0",
+                                "ColorReleased": {
+                                  "Red": 237,
+                                  "Green": 237,
+                                  "Blue": 237
+                                },
+                                "ColorPressed": {
+                                  "Red": 237,
+                                  "Green": 237,
+                                  "Blue": 237
+                                }
+                              },
+                              {
+                                "Type": "BoxWithBorderButtonStyle",
+                                "Width": 320,
+                                "Height": 30,
+                                "LockToFlexButtonSize": true,
+                                "ColorReleased": {
+                                  "Red": 63,
+                                  "Green": 63,
+                                  "Blue": 81
+                                },
+                                "ColorPressed": {
+                                  "Red": 64,
+                                  "Green": 92,
+                                  "Blue": 160
+                                },
+                                "ColorBorderReleased": {
+                                  "Red": 237,
+                                  "Green": 237,
+                                  "Blue": 237
+                                },
+                                "ColorBorderPressed": {
+                                  "Red": 51,
+                                  "Green": 102,
+                                  "Blue": 153
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "Type": "TextArea",
+                            "Name": "check_not_hardened_address_3",
+                            "Y": 130,
+                            "Width": 320,
+                            "Height": 20,
+                            "LockPosition": true,
+                            "TextId": "sd_check_not_hardened_address_3",
+                            "TextRotation": "0",
+                            "Color": {
+                              "Red": 255,
+                              "Green": 140
+                            },
+                            "Wildcard1": {
+                              "TextId": "sd_check_not_hardened_address_3_value",
+                              "UseBuffer": true,
+                              "BufferSize": 20
+                            }
+                          },
+                          {
+                            "Type": "TextArea",
+                            "Name": "check_not_hardened_address_2",
+                            "Y": 110,
+                            "Width": 320,
+                            "Height": 20,
+                            "LockPosition": true,
+                            "TextId": "sd_check_not_hardened_address_2",
+                            "TextRotation": "0",
+                            "Color": {
+                              "Red": 63,
+                              "Green": 63,
+                              "Blue": 81
+                            },
+                            "Wildcard1": {
+                              "TextId": "sd_check_not_hardened_address_2_value",
+                              "UseBuffer": true,
+                              "BufferSize": 80
+                            }
+                          },
+                          {
+                            "Type": "TextArea",
+                            "Name": "check_not_hardened_address_1",
+                            "Y": 90,
+                            "Width": 320,
+                            "Height": 20,
+                            "LockPosition": true,
+                            "TextId": "sd_check_not_hardened_address_1",
+                            "TextRotation": "0",
+                            "Color": {
+                              "Red": 255,
+                              "Green": 140
+                            },
+                            "Wildcard1": {
+                              "TextId": "sd_check_not_hardened_address_1_value",
+                              "UseBuffer": true,
+                              "BufferSize": 20
+                            }
+                          },
+                          {
+                            "Type": "TextArea",
+                            "Name": "text_info_not_hardened_address",
+                            "Y": 36,
+                            "Width": 320,
+                            "Height": 20,
+                            "LockPosition": true,
+                            "TextId": "sd_not_hardened_address_text_info",
+                            "TextRotation": "0",
+                            "Color": {
+                              "Red": 63,
+                              "Green": 63,
+                              "Blue": 81
+                            },
+                            "Wildcard1": {
+                              "TextId": "sd_not_hardened_address_text_info_value",
+                              "UseBuffer": true,
+                              "BufferSize": 50
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "Type": "Container",
+                        "Name": "check_hardenend_address",
+                        "Width": 320,
+                        "Height": 240,
+                        "Visible": false,
+                        "LockPosition": true,
+                        "Components": [
+                          {
+                            "Type": "FlexButton",
+                            "Name": "btn_toggle_not_hardened",
+                            "Y": 210,
+                            "Width": 320,
+                            "Height": 30,
+                            "LockPosition": true,
+                            "ButtonTrigger": {
+                              "Type": "ClickButtonTrigger"
+                            },
+                            "ButtonStyles": [
+                              {
+                                "Type": "TextButtonStyle",
+                                "Y": 5,
+                                "TextId": "sd_btn_toggle_not_hardened",
+                                "TextRotation": "0",
+                                "ColorReleased": {
+                                  "Red": 237,
+                                  "Green": 237,
+                                  "Blue": 237
+                                },
+                                "ColorPressed": {
+                                  "Red": 237,
+                                  "Green": 237,
+                                  "Blue": 237
+                                }
+                              },
+                              {
+                                "Type": "BoxWithBorderButtonStyle",
+                                "Width": 320,
+                                "Height": 30,
+                                "LockToFlexButtonSize": true,
+                                "ColorReleased": {
+                                  "Red": 63,
+                                  "Green": 63,
+                                  "Blue": 81
+                                },
+                                "ColorPressed": {
+                                  "Red": 64,
+                                  "Green": 92,
+                                  "Blue": 160
+                                },
+                                "ColorBorderReleased": {
+                                  "Red": 237,
+                                  "Green": 237,
+                                  "Blue": 237
+                                },
+                                "ColorBorderPressed": {
+                                  "Red": 51,
+                                  "Green": 102,
+                                  "Blue": 153
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "Type": "TextArea",
+                            "Name": "check_hardened_address_3",
+                            "Y": 130,
+                            "Width": 320,
+                            "Height": 20,
+                            "LockPosition": true,
+                            "TextId": "sd_check_hardened_address_3",
+                            "TextRotation": "0",
+                            "Color": {
+                              "Red": 255,
+                              "Green": 140
+                            },
+                            "Wildcard1": {
+                              "TextId": "sd_check_hardened_address_3_value",
+                              "UseBuffer": true,
+                              "BufferSize": 20
+                            }
+                          },
+                          {
+                            "Type": "TextArea",
+                            "Name": "check_hardened_address_2",
+                            "Y": 110,
+                            "Width": 320,
+                            "Height": 20,
+                            "LockPosition": true,
+                            "TextId": "sd_check_hardened_address_2",
+                            "TextRotation": "0",
+                            "Color": {
+                              "Red": 63,
+                              "Green": 63,
+                              "Blue": 81
+                            },
+                            "Wildcard1": {
+                              "TextId": "sd_check_hardened_address_2_value",
+                              "UseBuffer": true,
+                              "BufferSize": 80
+                            }
+                          },
+                          {
+                            "Type": "TextArea",
+                            "Name": "check_hardened_address_1",
+                            "Y": 90,
+                            "Width": 320,
+                            "Height": 20,
+                            "LockPosition": true,
+                            "TextId": "sd_check_hardened_address_1",
+                            "TextRotation": "0",
+                            "Color": {
+                              "Red": 255,
+                              "Green": 140
+                            },
+                            "Wildcard1": {
+                              "TextId": "sd_check_hardened_address_1_value",
+                              "UseBuffer": true,
+                              "BufferSize": 20
+                            }
+                          },
+                          {
+                            "Type": "TextArea",
+                            "Name": "text_info_hardened_address",
+                            "Y": 36,
+                            "Width": 320,
+                            "Height": 20,
+                            "LockPosition": true,
+                            "TextId": "sd_hardened_address_text_info",
+                            "TextRotation": "0",
+                            "Color": {
+                              "Red": 63,
+                              "Green": 63,
+                              "Blue": 81
+                            },
+                            "Wildcard1": {
+                              "TextId": "sd_hardened_address_text_info_value",
+                              "UseBuffer": true,
+                              "BufferSize": 50
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "text_info",
+                        "Y": 16,
+                        "Width": 320,
+                        "Height": 20,
+                        "LockPosition": true,
+                        "TextId": "sd_check_address_text_info",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 63,
+                          "Green": 63,
+                          "Blue": 81
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "wow_create_chat_key",
+                "Width": 320,
+                "Height": 240,
+                "Visible": false,
+                "LockPosition": true,
+                "Components": [
+                  {
+                    "Type": "Container",
+                    "Name": "container_caution_chat_key_msg",
+                    "Width": 320,
+                    "Height": 240,
+                    "LockPosition": true,
+                    "Components": [
+                      {
+                        "Type": "FlexButton",
+                        "Name": "btn_caution_chat_key_msg",
+                        "Y": 210,
+                        "Width": 320,
+                        "Height": 30,
+                        "LockPosition": true,
+                        "ButtonTrigger": {
+                          "Type": "ClickButtonTrigger"
+                        },
+                        "ButtonStyles": [
+                          {
+                            "Type": "TextButtonStyle",
+                            "Y": 5,
+                            "TextId": "sd_btn_caution_chat_key_msg",
+                            "TextRotation": "0",
+                            "ColorReleased": {
+                              "Red": 237,
+                              "Green": 237,
+                              "Blue": 237
+                            },
+                            "ColorPressed": {
+                              "Red": 237,
+                              "Green": 237,
+                              "Blue": 237
+                            }
+                          },
+                          {
+                            "Type": "BoxWithBorderButtonStyle",
+                            "Width": 320,
+                            "Height": 30,
+                            "LockToFlexButtonSize": true,
+                            "ColorReleased": {
+                              "Red": 63,
+                              "Green": 63,
+                              "Blue": 81
+                            },
+                            "ColorPressed": {
+                              "Red": 64,
+                              "Green": 92,
+                              "Blue": 160
+                            },
+                            "ColorBorderReleased": {
+                              "Red": 237,
+                              "Green": 237,
+                              "Blue": 237
+                            },
+                            "ColorBorderPressed": {
+                              "Red": 51,
+                              "Green": 102,
+                              "Blue": 153
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "Type": "Container",
+                        "Name": "text_caution_chat_key_msg_spanish",
+                        "Width": 320,
+                        "Height": 240,
+                        "Visible": false,
+                        "LockPosition": true,
+                        "Components": [
+                          {
+                            "Type": "TextArea",
+                            "Name": "caution_chat_key_msg_spanish_1",
+                            "Y": 45,
+                            "Width": 125,
+                            "Height": 18,
+                            "LockPosition": true,
+                            "TextId": "sd_caution_chat_key_msg_spanish_1",
+                            "TextRotation": "0",
+                            "Color": {
+                              "Red": 63,
+                              "Green": 63,
+                              "Blue": 81
+                            }
+                          },
+                          {
+                            "Type": "TextArea",
+                            "Name": "caution_chat_key_msg_spanish_2",
+                            "X": 125,
+                            "Y": 44,
+                            "Width": 195,
+                            "Height": 19,
+                            "LockPosition": true,
+                            "TextId": "sd_caution_chat_key_msg_spanish_2",
+                            "TextRotation": "0",
+                            "Color": {
+                              "Red": 63,
+                              "Green": 63,
+                              "Blue": 81
+                            }
+                          },
+                          {
+                            "Type": "TextArea",
+                            "Name": "caution_chat_key_msg_spanish_3",
+                            "Y": 63,
+                            "Width": 320,
+                            "Height": 147,
+                            "LockPosition": true,
+                            "TextId": "sd_caution_chat_key_msg_spanish_3",
+                            "TextRotation": "0",
+                            "Color": {
+                              "Red": 63,
+                              "Green": 63,
+                              "Blue": 81
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "Type": "Container",
+                        "Name": "text_caution_chat_key_msg_english",
+                        "Width": 320,
+                        "Height": 240,
+                        "LockPosition": true,
+                        "Components": [
+                          {
+                            "Type": "TextArea",
+                            "Name": "caution_chat_key_msg_english_1",
+                            "Y": 45,
+                            "Width": 115,
+                            "Height": 18,
+                            "LockPosition": true,
+                            "TextId": "sd_caution_chat_key_msg_english_1",
+                            "TextRotation": "0",
+                            "Color": {
+                              "Red": 63,
+                              "Green": 63,
+                              "Blue": 81
+                            }
+                          },
+                          {
+                            "Type": "TextArea",
+                            "Name": "caution_chat_key_msg_english_2",
+                            "X": 115,
+                            "Y": 44,
+                            "Width": 205,
+                            "Height": 19,
+                            "LockPosition": true,
+                            "TextId": "sd_caution_chat_key_msg_english_2",
+                            "TextRotation": "0",
+                            "Color": {
+                              "Red": 63,
+                              "Green": 63,
+                              "Blue": 81
+                            }
+                          },
+                          {
+                            "Type": "TextArea",
+                            "Name": "caution_chat_key_msg_english_3",
+                            "Y": 63,
+                            "Width": 320,
+                            "Height": 147,
+                            "LockPosition": true,
+                            "TextId": "sd_caution_chat_key_msg_english_3",
+                            "TextRotation": "0",
+                            "Color": {
+                              "Red": 63,
+                              "Green": 63,
+                              "Blue": 81
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_check_chat_key",
+                    "Width": 320,
+                    "Height": 240,
+                    "Visible": false,
+                    "LockPosition": true,
+                    "Components": [
+                      {
+                        "Type": "FlexButton",
+                        "Name": "btn_chat_key_more_time",
+                        "Y": 210,
+                        "Width": 320,
+                        "Height": 30,
+                        "LockPosition": true,
+                        "ButtonTrigger": {
+                          "Type": "ClickButtonTrigger"
+                        },
+                        "ButtonStyles": [
+                          {
+                            "Type": "TextButtonStyle",
+                            "Y": 5,
+                            "TextId": "sd_btn_chat_key_more_time",
+                            "TextRotation": "0",
+                            "ColorReleased": {
+                              "Red": 237,
+                              "Green": 237,
+                              "Blue": 237
+                            },
+                            "ColorPressed": {
+                              "Red": 237,
+                              "Green": 237,
+                              "Blue": 237
+                            }
+                          },
+                          {
+                            "Type": "BoxWithBorderButtonStyle",
+                            "Width": 320,
+                            "Height": 30,
+                            "LockToFlexButtonSize": true,
+                            "ColorReleased": {
+                              "Red": 63,
+                              "Green": 63,
+                              "Blue": 81
+                            },
+                            "ColorPressed": {
+                              "Red": 64,
+                              "Green": 92,
+                              "Blue": 160
+                            },
+                            "ColorBorderReleased": {
+                              "Red": 237,
+                              "Green": 237,
+                              "Blue": 237
+                            },
+                            "ColorBorderPressed": {
+                              "Red": 51,
+                              "Green": 102,
+                              "Blue": 153
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "Type": "Box",
+                        "Name": "qr_code_chat_key_background",
+                        "X": 82,
+                        "Y": 42,
+                        "Width": 157,
+                        "Height": 157,
+                        "LockPosition": true,
+                        "Color": {
+                          "Red": 237,
+                          "Green": 237,
+                          "Blue": 237
+                        }
+                      },
+                      {
+                        "Type": "QRCode",
+                        "Name": "qr_code_chat_key",
+                        "X": 87,
+                        "Y": 47,
+                        "Width": 147,
+                        "Height": 147,
+                        "LockPosition": true,
+                        "QRVersion": 8,
+                        "Scale": 3,
+                        "Text": "---",
+                        "ForegroundColor": {
+                          "Red": 64,
+                          "Green": 92,
+                          "Blue": 160
+                        },
+                        "BackgroundColor": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        }
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "text_timeout_chat_key",
+                        "X": 130,
+                        "Y": 10,
+                        "Width": 60,
+                        "Height": 30,
+                        "LockPosition": true,
+                        "TextId": "sd_timeout_chat_key",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 64,
+                          "Green": 92,
+                          "Blue": 160
+                        },
+                        "Wildcard1": {
+                          "TextId": "sd_timeout_chat_key_value",
+                          "UseBuffer": true,
+                          "BufferSize": 5
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container_check_create_descriptor",
+                "Width": 320,
+                "Height": 240,
+                "Visible": false,
+                "LockPosition": true,
+                "Components": [
+                  {
+                    "Type": "FlexButton",
+                    "Name": "btn_close",
+                    "Y": 210,
+                    "Width": 320,
+                    "Height": 30,
+                    "LockPosition": true,
+                    "ButtonTrigger": {
+                      "Type": "ClickButtonTrigger"
+                    },
+                    "ButtonStyles": [
+                      {
+                        "Type": "TextButtonStyle",
+                        "Y": 5,
+                        "TextId": "sd_btn_close",
+                        "TextRotation": "0",
+                        "ColorReleased": {
+                          "Red": 237,
+                          "Green": 237,
+                          "Blue": 237
+                        },
+                        "ColorPressed": {
+                          "Red": 237,
+                          "Green": 237,
+                          "Blue": 237
+                        }
+                      },
+                      {
+                        "Type": "BoxWithBorderButtonStyle",
+                        "Width": 320,
+                        "Height": 30,
+                        "LockToFlexButtonSize": true,
+                        "ColorReleased": {
+                          "Red": 63,
+                          "Green": 63,
+                          "Blue": 81
+                        },
+                        "ColorPressed": {
+                          "Red": 64,
+                          "Green": 92,
+                          "Blue": 160
+                        },
+                        "ColorBorderReleased": {
+                          "Red": 237,
+                          "Green": 237,
+                          "Blue": 237
+                        },
+                        "ColorBorderPressed": {
+                          "Red": 51,
+                          "Green": 102,
+                          "Blue": 153
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "qr_code_descriptor_background",
+                    "X": 70,
+                    "Y": 17,
+                    "Width": 181,
+                    "Height": 181,
+                    "LockPosition": true,
+                    "Color": {
                       "Red": 237,
                       "Green": 237,
                       "Blue": 237
                     }
                   },
                   {
-                    "Type": "BoxWithBorderButtonStyle",
-                    "Width": 320,
-                    "Height": 30,
-                    "LockToFlexButtonSize": true,
-                    "ColorReleased": {
-                      "Red": 63,
-                      "Green": 63,
-                      "Blue": 81
-                    },
-                    "ColorPressed": {
+                    "Type": "QRCode",
+                    "Name": "qr_code_descriptor",
+                    "X": 75,
+                    "Y": 22,
+                    "Width": 171,
+                    "Height": 171,
+                    "LockPosition": true,
+                    "QRVersion": 10,
+                    "Scale": 3,
+                    "Text": "---",
+                    "ForegroundColor": {
                       "Red": 64,
                       "Green": 92,
                       "Blue": 160
                     },
-                    "ColorBorderReleased": {
-                      "Red": 237,
-                      "Green": 237,
-                      "Blue": 237
-                    },
-                    "ColorBorderPressed": {
-                      "Red": 51,
-                      "Green": 102,
-                      "Blue": 153
+                    "BackgroundColor": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
                     }
                   }
                 ]
-              },
-              {
-                "Type": "TextArea",
-                "Name": "check_receiver_address_3",
-                "Y": 130,
-                "Width": 320,
-                "Height": 20,
-                "LockPosition": true,
-                "TextId": "sd_check_receiver_address_3",
-                "TextRotation": "0",
-                "Color": {
-                  "Red": 255,
-                  "Green": 140
-                },
-                "Wildcard1": {
-                  "TextId": "sd_check_receiver_address_3_value",
-                  "UseBuffer": true,
-                  "BufferSize": 20
-                }
-              },
-              {
-                "Type": "TextArea",
-                "Name": "check_receiver_address_2",
-                "Y": 110,
-                "Width": 320,
-                "Height": 20,
-                "LockPosition": true,
-                "TextId": "sd_check_receiver_address_2",
-                "TextRotation": "0",
-                "Color": {
-                  "Red": 63,
-                  "Green": 63,
-                  "Blue": 81
-                },
-                "Wildcard1": {
-                  "TextId": "sd_check_receiver_address_2_value",
-                  "UseBuffer": true,
-                  "BufferSize": 80
-                }
-              },
-              {
-                "Type": "TextArea",
-                "Name": "check_receiver_address_1",
-                "Y": 90,
-                "Width": 320,
-                "Height": 20,
-                "LockPosition": true,
-                "TextId": "sd_check_receiver_address_1",
-                "TextRotation": "0",
-                "Color": {
-                  "Red": 255,
-                  "Green": 140
-                },
-                "Wildcard1": {
-                  "TextId": "sd_check_receiver_address_1_value",
-                  "UseBuffer": true,
-                  "BufferSize": 20
-                }
-              },
-              {
-                "Type": "TextArea",
-                "Name": "text_info",
-                "Y": 16,
-                "Width": 320,
-                "Height": 20,
-                "LockPosition": true,
-                "TextId": "sd_check_address_text_info",
-                "TextRotation": "0",
-                "Color": {
-                  "Red": 63,
-                  "Green": 63,
-                  "Blue": 81
-                }
               }
             ]
           },
@@ -6121,7 +7085,7 @@
             "InteractionName": "btnQrSeedPressed",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "btn_1_qr_seed"
+              "TriggerComponent": "btn_2_qr_seed"
             },
             "Action": {
               "Type": "ActionCustom",
@@ -6132,7 +7096,7 @@
             "InteractionName": "btnQrPrivateKeyPressed",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "btn_2_qr_private_key"
+              "TriggerComponent": "btn_3_qr_private_key"
             },
             "Action": {
               "Type": "ActionCustom",
@@ -6143,7 +7107,7 @@
             "InteractionName": "btnQrPublicKeyPressed",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "btn_3_qr_public_key"
+              "TriggerComponent": "btn_4_qr_public_key"
             },
             "Action": {
               "Type": "ActionCustom",
@@ -6151,14 +7115,91 @@
             }
           },
           {
+            "InteractionName": "btnConnectAppMsgPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "btn_connect_app_msg"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "btnConnectAppMsgPressed"
+            }
+          },
+          {
+            "InteractionName": "btnWatchOnlyWalletPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "btn_1_watch_only_wallet"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "btnWatchOnlyWalletPressed"
+            }
+          },
+          {
+            "InteractionName": "btnCreateDescriptorPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "btn_1_create_descriptor"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "btnCreateDescriptorPressed"
+            }
+          },
+          {
+            "InteractionName": "btnCreateDescriptorMultisignPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "btn_2_create_descriptor_multisign"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "btnCreateDescriptorMultisignPressed"
+            }
+          },
+          {
             "InteractionName": "btnVerifyAddressPressed",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "btn_4_verify_address"
+              "TriggerComponent": "btn_3_verify_address"
             },
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "btnVerifyAddressPressed"
+            }
+          },
+          {
+            "InteractionName": "btnCreateChatKeyPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "btn_4_create_chat_key"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "btnCreateChatKeyPressed"
+            }
+          },
+          {
+            "InteractionName": "btnToggleHardenedAddress",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "btn_toggle_hardened"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "btnToggleHardenedAddress"
+            }
+          },
+          {
+            "InteractionName": "btnToggleNotHardenedAddress",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "btn_toggle_not_hardened"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "btnToggleNotHardenedAddress"
             }
           },
           {
@@ -6173,14 +7214,47 @@
             }
           },
           {
-            "InteractionName": "btnConnectAppMsgPressed",
+            "InteractionName": "btnCautionChatKeyPressed",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "btn_connect_app_msg"
+              "TriggerComponent": "btn_caution_chat_key_msg"
             },
             "Action": {
               "Type": "ActionCustom",
-              "FunctionName": "btnConnectAppMsgPressed"
+              "FunctionName": "btnCautionChatKeyPressed"
+            }
+          },
+          {
+            "InteractionName": "moreTimeChatKeyPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "btn_chat_key_more_time"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "moreTimeChatKeyPressed"
+            }
+          },
+          {
+            "InteractionName": "btnConfirmViewSecretPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "btn_confirm_view_secret"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "btnConfirmViewSecretPressed"
+            }
+          },
+          {
+            "InteractionName": "btnReuseSeedPhrasePressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "btn_5_reuse_seed_phrase"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "btnReuseSeedPhrasePressed"
             }
           }
         ]
@@ -17797,6 +18871,147 @@
         "Interactions": []
       },
       {
+        "Name": "keyboard_decrypt_createDescriptor",
+        "Y": 117,
+        "Width": 320,
+        "Height": 123,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "keyboard_background",
+            "Width": 320,
+            "Height": 123,
+            "LockPosition": true,
+            "Color": {
+              "Red": 237,
+              "Green": 237,
+              "Blue": 237
+            }
+          },
+          {
+            "Type": "Image",
+            "Name": "key_hide",
+            "X": 212,
+            "Y": 89,
+            "Width": 105,
+            "Height": 29,
+            "LockPosition": true,
+            "RelativeFilename": "keyboard_images\\numeric\\keyboardNum_hide_1_released.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "key_delete",
+            "X": 2,
+            "Y": 89,
+            "Width": 105,
+            "Height": 29,
+            "LockPosition": true,
+            "RelativeFilename": "keyboard_images\\numeric\\keyboardNum_delete_released.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "key_1",
+            "X": 2,
+            "Y": 2,
+            "Width": 105,
+            "Height": 29,
+            "LockPosition": true,
+            "RelativeFilename": "keyboard_images\\numeric\\keyboardNum_key_released.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "key_2",
+            "X": 107,
+            "Y": 2,
+            "Width": 105,
+            "Height": 29,
+            "LockPosition": true,
+            "RelativeFilename": "keyboard_images\\numeric\\keyboardNum_key_released.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "key_3",
+            "X": 212,
+            "Y": 2,
+            "Width": 105,
+            "Height": 29,
+            "LockPosition": true,
+            "RelativeFilename": "keyboard_images\\numeric\\keyboardNum_key_released.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "key_4",
+            "X": 2,
+            "Y": 31,
+            "Width": 105,
+            "Height": 29,
+            "LockPosition": true,
+            "RelativeFilename": "keyboard_images\\numeric\\keyboardNum_key_released.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "key_5",
+            "X": 107,
+            "Y": 31,
+            "Width": 105,
+            "Height": 29,
+            "LockPosition": true,
+            "RelativeFilename": "keyboard_images\\numeric\\keyboardNum_key_released.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "key_6",
+            "X": 212,
+            "Y": 31,
+            "Width": 105,
+            "Height": 29,
+            "LockPosition": true,
+            "RelativeFilename": "keyboard_images\\numeric\\keyboardNum_key_released.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "key_7",
+            "X": 2,
+            "Y": 60,
+            "Width": 105,
+            "Height": 29,
+            "LockPosition": true,
+            "RelativeFilename": "keyboard_images\\numeric\\keyboardNum_key_released.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "key_8",
+            "X": 107,
+            "Y": 60,
+            "Width": 105,
+            "Height": 29,
+            "LockPosition": true,
+            "RelativeFilename": "keyboard_images\\numeric\\keyboardNum_key_released.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "key_9",
+            "X": 212,
+            "Y": 60,
+            "Width": 105,
+            "Height": 29,
+            "LockPosition": true,
+            "RelativeFilename": "keyboard_images\\numeric\\keyboardNum_key_released.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "key_10",
+            "X": 107,
+            "Y": 89,
+            "Width": 105,
+            "Height": 29,
+            "LockPosition": true,
+            "RelativeFilename": "keyboard_images\\numeric\\keyboardNum_key_released.png"
+          }
+        ],
+        "Interactions": []
+      },
+      {
         "Name": "keyboard_wallet_diceNum",
         "Y": 148,
         "Width": 320,
@@ -20189,23 +21404,311 @@
                 }
               }
             ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "tickEvent",
+            "Trigger": {
+              "Type": "TriggerOnEveryTick",
+              "TickCount": 10
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "tickEvent"
+            }
+          },
+          {
+            "InteractionName": "hideKeyboardPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "keyboard_btn_hide"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "hideKeyboardPressed"
+            }
+          },
+          {
+            "InteractionName": "showKeyboardPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "keyboard_btn_show"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "showKeyboardPressed"
+            }
+          },
+          {
+            "InteractionName": "enterKeyboardPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "keyboard_btn_enter"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "enterKeyboardPressed"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "create_descriptor",
+        "Width": 320,
+        "Height": 240,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "background",
+            "Width": 320,
+            "Height": 240,
+            "LockPosition": true,
+            "Color": {
+              "Red": 237,
+              "Green": 237,
+              "Blue": 237
+            }
           },
           {
             "Type": "Container",
-            "Name": "checkAddress",
+            "Name": "typeAcountNumber",
             "Width": 320,
             "Height": 240,
-            "Visible": false,
             "LockPosition": true,
             "Components": [
               {
+                "Type": "CustomContainerInstance",
+                "Name": "keyboard",
+                "Y": 117,
+                "Width": 320,
+                "Height": 123,
+                "Visible": false,
+                "LockPosition": true,
+                "CustomContainerDefinitionName": "keyboard_decrypt_createDescriptor"
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "keyboard_btn_hide",
+                "X": 212,
+                "Y": 206,
+                "Width": 105,
+                "Height": 29,
+                "Visible": false,
+                "LockPosition": true,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "IconButtonStyle",
+                    "IconReleased": "keyboard_images\\numeric\\keyboardNum_hide_1_released.png",
+                    "IconPressed": "keyboard_images\\numeric\\keyboardNum_hide_1_pressed.png"
+                  }
+                ]
+              },
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "keyboard_text_area",
+                "X": 45,
+                "Y": 134,
+                "Width": 230,
+                "Height": 30,
+                "LockPosition": true,
+                "CustomContainerDefinitionName": "textArea"
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "keyboard_btn_show",
+                "X": 76,
+                "Y": 134,
+                "Width": 169,
+                "Height": 30,
+                "LockPosition": true,
+                "Alpha": 0,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "BoxWithBorderButtonStyle",
+                    "Width": 169,
+                    "Height": 30,
+                    "LockToFlexButtonSize": true,
+                    "BorderSize": 5,
+                    "ColorReleased": {
+                      "Green": 102,
+                      "Blue": 153
+                    },
+                    "ColorPressed": {
+                      "Green": 153,
+                      "Blue": 204
+                    },
+                    "ColorBorderReleased": {
+                      "Green": 51,
+                      "Blue": 102
+                    },
+                    "ColorBorderPressed": {
+                      "Red": 51,
+                      "Green": 102,
+                      "Blue": 153
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "keyboard_btn_enter",
+                "Y": 210,
+                "Width": 320,
+                "Height": 30,
+                "LockPosition": true,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "TextButtonStyle",
+                    "Y": 5,
+                    "TextId": "cont_verify_address_btn_keyboard_enter",
+                    "TextRotation": "0",
+                    "ColorReleased": {
+                      "Red": 237,
+                      "Green": 237,
+                      "Blue": 237
+                    },
+                    "ColorPressed": {
+                      "Red": 237,
+                      "Green": 237,
+                      "Blue": 237
+                    }
+                  },
+                  {
+                    "Type": "BoxWithBorderButtonStyle",
+                    "Width": 320,
+                    "Height": 30,
+                    "LockToFlexButtonSize": true,
+                    "ColorReleased": {
+                      "Red": 63,
+                      "Green": 63,
+                      "Blue": 81
+                    },
+                    "ColorPressed": {
+                      "Red": 64,
+                      "Green": 92,
+                      "Blue": 160
+                    },
+                    "ColorBorderReleased": {
+                      "Red": 237,
+                      "Green": 237,
+                      "Blue": 237
+                    },
+                    "ColorBorderPressed": {
+                      "Red": 51,
+                      "Green": 102,
+                      "Blue": 153
+                    }
+                  }
+                ]
+              },
+              {
                 "Type": "TextArea",
-                "Name": "check_text_info",
+                "Name": "keyboard_text_typed",
+                "X": 76,
+                "Y": 139,
+                "Width": 169,
+                "Height": 20,
+                "LockPosition": true,
+                "TextId": "cont_verify_address_keyboard_typed",
+                "TextRotation": "0",
+                "Wildcard1": {
+                  "TextId": "cont_verify_address_keyboard_typed_value",
+                  "UseBuffer": true,
+                  "BufferSize": 5
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "keyboard_placeholder",
+                "X": 62,
+                "Y": 139,
+                "Width": 180,
+                "Height": 20,
+                "LockPosition": true,
+                "TextId": "cont_create_descriptor_keyboard_placeholder",
+                "TextRotation": "0",
+                "Alpha": 75
+              },
+              {
+                "Type": "TextArea",
+                "Name": "keyboard_text_info_3",
+                "Y": 104,
+                "Width": 320,
+                "Height": 20,
+                "LockPosition": true,
+                "TextId": "cont_create_descriptor_keyboard_info_3",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 63,
+                  "Green": 63,
+                  "Blue": 81
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "keyboard_text_info_2",
+                "Y": 59,
+                "Width": 320,
+                "Height": 40,
+                "LockPosition": true,
+                "TextId": "cont_create_descriptor_keyboard_info_2",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 63,
+                  "Green": 63,
+                  "Blue": 81
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "keyboard_text_info_1",
                 "Y": 16,
                 "Width": 320,
                 "Height": 20,
                 "LockPosition": true,
-                "TextId": "cont_verify_address_check_info",
+                "TextId": "cont_create_descriptor_keyboard_info_1",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 63,
+                  "Green": 63,
+                  "Blue": 81
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "keyboard_text_info_2_multisignature",
+                "Y": 59,
+                "Width": 320,
+                "Height": 40,
+                "Visible": false,
+                "LockPosition": true,
+                "TextId": "cont_create_descriptor_keyboard_info_2_multisignature",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 63,
+                  "Green": 63,
+                  "Blue": 81
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "keyboard_text_info_1_multisignature",
+                "Y": 16,
+                "Width": 320,
+                "Height": 20,
+                "Visible": false,
+                "LockPosition": true,
+                "TextId": "cont_create_descriptor_keyboard_info_1_multisignature",
                 "TextRotation": "0",
                 "Color": {
                   "Red": 63,
@@ -20307,7 +21810,7 @@
     "SubFamily": "STM32U5x9",
     "Toolchain": "STM32CubeIDE",
     "Platform": "m33",
-    "ProjectFile": "../sml-230109.ioc",
+    "ProjectFile": "../cuvex_bit-firmware.ioc",
     "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
     "OptionalComponents": [
       "GPU2D"

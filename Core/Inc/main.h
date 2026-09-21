@@ -137,13 +137,14 @@ void Error_Handler(void);
  * DEFINE's
  */
 
-#define FIRMWARE_VERSION			"1.2.0"
+#define FIRMWARE_VERSION			"1.2.1"
 #define HARDWARE_VERSION() 			('1' + ((HAL_GPIO_ReadPin(GPIOC, HW_VER_3_Pin) == GPIO_PIN_SET) << 2) + ((HAL_GPIO_ReadPin(GPIOC, HW_VER_2_Pin) == GPIO_PIN_SET) << 1) + ((HAL_GPIO_ReadPin(GPIOC, HW_VER_1_Pin) == GPIO_PIN_SET) << 0))
 #define FW_VER_F1   				(FIRMWARE_VERSION[0] - '0')
 #define FW_VER_F2   				(FIRMWARE_VERSION[2] - '0')
 #define FW_VER_F3   				(FIRMWARE_VERSION[4] - '0')
 
 //#define DEBUG_PRINTF
+//#define DEBUG_PRINTF_ENCRYPT
 //#define DEBUG_PRINTF_FINGERPRINT
 //#define DEBUG_PSBT_PRINTF
 //#define DEBUG_PRINTF_DECRYPT
@@ -237,11 +238,14 @@ struct decrypt
 	uint8_t cryptogram_decrypted[SIZE_CRYPT];
 	uint8_t derivation_path[50];
 	uint8_t derived_address[100];
+	uint8_t descriptor_acount_number[5];
+	bool descriptor_is_multisignature;
 };
 
 struct wallet
 {
 	bool flag_new;
+	bool flag_reuse_seed;
 	uint8_t dice_selected[4];
 	uint8_t coin_dice_values[5];
 	uint8_t words_to_encrypt[24][5];

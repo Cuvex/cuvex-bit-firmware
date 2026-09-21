@@ -1414,6 +1414,17 @@ void screen_flow_encrypt_part_2View::generateRecordData1_Alias()
 	}
 
 	cuvex.tag.alias_lenght = strlen((char *) cuvex.tag.alias);
+
+#ifdef DEBUG_PRINTF_ENCRYPT
+	printf("#########################################################################\r\n");
+	printf("################################ ALIAS ##################################\r\n");
+	printf("#########################################################################\r\n");
+	printf("--> alias (char):\r\n");
+	for(int i=0; i<cuvex.tag.alias_lenght; i++){
+		printf("%c", cuvex.tag.alias[i]);
+	}
+	printf("\r\n\r\n");
+#endif
 }
 
 /**************************************************************************************************************************************
@@ -1540,6 +1551,67 @@ void screen_flow_encrypt_part_2View::generateRecordData2_Cryptogram()
 		generateCryptogram(text_to_encrypt);
 		break;
 	}
+
+#ifdef DEBUG_PRINTF_ENCRYPT
+	printf("#########################################################################\r\n");
+	printf("############################### CRYPTOGRAM ##############################\r\n");
+	printf("#########################################################################\r\n");
+
+	printf("--> pwds_0 (char):\r\n");
+	for(int i=0; i<strlen((char *)pwds[0]); i++){
+		printf("%c", pwds[0][i]);
+	}
+	printf("\r\n\r\n");
+
+	printf("--> pwds_sha256_0 (hex):\r\n");
+	for(int i=0; i<32; i++){
+		printf("%02X", pwds_sha256[0][i]);
+	}
+	printf("\r\n\r\n");
+
+	printf("--> pwds_sha256_concat (hex):\r\n");
+	for(int i=0; i<total_pwds*32; i++){
+		printf("%02X", pwds_sha256_concat[i]);
+	}
+	printf("\r\n\r\n");
+
+
+	printf("--> salt_pbkdf2 (hex):\r\n");
+	for(int i=0; i<16; i++){
+		printf("%02X", salt_pbkdf2[i]);
+	}
+	printf("\r\n\r\n");
+
+	printf("--> iv_aes_gcm (hex):\r\n");
+	for(int i=0; i<16; i++){
+		printf("%02X", iv_aes_gcm[i]);
+	}
+	printf("\r\n\r\n");
+
+	printf("--> pwds_key_pbkdf2 (hex):\r\n");
+	for(int i=0; i<32; i++){
+		printf("%02X", pwds_key_pbkdf2[i]);
+	}
+	printf("\r\n\r\n");
+
+	printf("--> text_to_encrypt (char):\r\n");
+	for(int i=0; i<strlen((char *)text_to_encrypt); i++){
+		printf("%c", text_to_encrypt[i]);
+	}
+	printf("\r\n\r\n");
+
+	printf("--> text_encrypted (char):\r\n");
+	for(int i=0; i<SIZE_CRYPT; i++){
+		printf("%c", cuvex.tag.cryptogram[i]);
+	}
+	printf("\r\n\r\n");
+
+	printf("--> text_encrypted (hex):\r\n");
+	for(int i=0; i<SIZE_CRYPT; i++){
+		printf("%02X", cuvex.tag.cryptogram[i]);
+	}
+	printf("\r\n\r\n");
+#endif
 }
 
 /**************************************************************************************************************************************
@@ -1550,37 +1622,55 @@ void screen_flow_encrypt_part_2View::generateRecordData2_Cryptogram()
  **************************************************************************************************************************************/
 void screen_flow_encrypt_part_2View::generateRecordData3_Information()
 {
-    enc_fields_t enc;
-    uint16_t ascii_len = 0;
-    char enc_token[ENC_TOKEN_LEN + 1] = {0};
+	enc_fields_t enc;
+	uint16_t ascii_len = 0;
+	char enc_token[ENC_TOKEN_LEN + 1] = {0};
 
-    /*** Clear destination buffer --> Record info format: ["E123456789K"][salt_pbkdf2][iv_aes_gcm] ***/
-    memset(cuvex.tag.information, 0x00, SIZE_INFORMATION);
+	/*** Clear destination buffer --> Record info format: ["E123456789K"][salt_pbkdf2][iv_aes_gcm] ***/
+	memset(cuvex.tag.information, 0x00, SIZE_INFORMATION);
 
-    /*** Fill encoder fields ***/
-    enc.f1 = FW_VER_F1;					//vf1 (0-9)
-    enc.f2 = FW_VER_F2;					//vf2 (0-9)
-    enc.f3 = FW_VER_F3;					//vf3 (0-9)
-    enc.hw = HARDWARE_VERSION() - '0';	//vh  (1-9)
-    enc.mx = total_pwds;          		//tot (1-6)
-    enc.my = mandatory_pwds;     		//man (1-6)
-    enc.p  = 0;							//pkt (0-1)
-    enc.c  = 0;							//clo (0-1)
-    enc.b  = biometric_enable ? 1 : 0;	//bit (0-1)
+	/*** Fill encoder fields ***/
+	enc.f1 = FW_VER_F1;					//vf1 (0-9)
+	enc.f2 = FW_VER_F2;					//vf2 (0-9)
+	enc.f3 = FW_VER_F3;					//vf3 (0-9)
+	enc.hw = HARDWARE_VERSION() - '0';	//vh  (1-9)
+	enc.mx = total_pwds;          		//tot (1-6)
+	enc.my = mandatory_pwds;     		//man (1-6)
+	enc.p  = 0;							//pkt (0-1)
+	enc.c  = 0;							//clo (0-1)
+	enc.b  = biometric_enable ? 1 : 0;	//bit (0-1)
 
-    /*** Encode reduced token ***/
-    enc_encode_fields_to_reduced(&enc, enc_token, sizeof(enc_token));
+	/*** Encode reduced token ***/
+	enc_encode_fields_to_reduced(&enc, enc_token, sizeof(enc_token));
 
-    /*** ASCII section + Get length of ASCII section ***/
-    memcpy(cuvex.tag.information, enc_token, ENC_TOKEN_LEN);
-    ascii_len = strlen((char *) cuvex.tag.information);
+	/*** ASCII section + Get length of ASCII section ***/
+	memcpy(cuvex.tag.information, enc_token, ENC_TOKEN_LEN);
+	ascii_len = strlen((char *) cuvex.tag.information);
 
-    /*** BINARY section ***/
-    memcpy(cuvex.tag.information + ascii_len, salt_pbkdf2, sizeof(salt_pbkdf2));
-    memcpy(cuvex.tag.information + ascii_len + sizeof(salt_pbkdf2), iv_aes_gcm, sizeof(iv_aes_gcm));
+	/*** BINARY section ***/
+	memcpy(cuvex.tag.information + ascii_len, salt_pbkdf2, sizeof(salt_pbkdf2));
+	memcpy(cuvex.tag.information + ascii_len + sizeof(salt_pbkdf2), iv_aes_gcm, sizeof(iv_aes_gcm));
 
-    /*** Information lenght ***/
-    cuvex.tag.information_lenght = ascii_len + sizeof(salt_pbkdf2) + sizeof(iv_aes_gcm);
+	/*** Information lenght ***/
+	cuvex.tag.information_lenght = ascii_len + sizeof(salt_pbkdf2) + sizeof(iv_aes_gcm);
+
+#ifdef DEBUG_PRINTF_ENCRYPT
+	printf("#########################################################################\r\n");
+	printf("############################## INFORMATION ##############################\r\n");
+	printf("#########################################################################\r\n");
+
+	printf("--> information (char):\r\n");
+	for(int i=0; i<cuvex.tag.information_lenght; i++){
+		printf("%c", cuvex.tag.information[i]);
+	}
+	printf("\r\n");
+
+	printf("--> information (hex):\r\n");
+	for(int i=0; i<cuvex.tag.information_lenght; i++){
+		printf("%02X", cuvex.tag.information[i]);
+	}
+	printf("\r\n");
+#endif
 }
 
 /**************************************************************************************************************************************
